@@ -7,7 +7,7 @@ sudo apt install certbot python3-certbot-nginx -y
 
 **2. Get SSL certificate**
 ```bash
-sudo certbot --nginx -d api.yourdomain.com -d www.api.yourdomain.com
+sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 ```
 
 **3. Enable auto-renew (usually already on)**
