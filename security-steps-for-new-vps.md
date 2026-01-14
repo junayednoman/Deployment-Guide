@@ -1,7 +1,7 @@
 ## Steps to ensure security of a new vps
 
 **1. Use a strong SSH setup**
-- **Disable password login:** only allow key-based authentication.
+- **Disable password login:** only allow key-based authentication and change default ssh port
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
@@ -9,8 +9,19 @@ sudo nano /etc/ssh/sshd_config
 ```bash
 PasswordAuthentication no
 PermitRootLogin no
+Port ***
 ```
-- **Change default SSH port from 22 to something random(Important ⚠️)**
+- Allow the new port and keep SSH access:
+```bash
+sudo ufw allow ***/tcp
+sudo ufw reload
+```
+
+- Restart SSH
+```bash
+sudo sshd -t
+sudo systemctl restart ssh
+```
 
 **2. Keep OS & packages updated**
 ```bash
