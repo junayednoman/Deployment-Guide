@@ -18,7 +18,7 @@ sudo ufw allow 'Nginx Full'
 ```bash
 sudo nano /etc/nginx/sites-available/yourdomain.com
 ```
-- Paste this for server-side (edit domain & port):
+- Paste this (edit domain & port):
 ```bash
 server {
     listen 80;
@@ -33,26 +33,6 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
-
-```
-- Paste this for client-side (edit domain & port):
-```bash
-server {
-    listen 80;
-    server_name yourdomain.com www.yourdomain.com;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_set_header Host $host;
-
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-```
 - Enable site:
 ```bash
 sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled/
