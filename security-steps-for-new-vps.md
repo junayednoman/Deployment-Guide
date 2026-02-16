@@ -1,6 +1,16 @@
+
 ## Steps to ensure security of a new vps
 
 **1. Use a strong SSH setup**
+- Create a new user:
+```
+adduser username
+```
+- Give the new user admin (sudo) privileges
+```
+sudo usermod -aG sudo username
+```
+
 - **Disable password login:** only allow key-based authentication and change default ssh port
 ```bash
 sudo nano /etc/ssh/sshd_config
