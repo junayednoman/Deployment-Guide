@@ -1,3 +1,4 @@
+
 ## Configure domain
 
 **1. Install Nginx (reverse proxy)**
@@ -33,6 +34,8 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
+```
+
 - Enable site:
 ```bash
 sudo ln -s /etc/nginx/sites-available/yourdomain.com /etc/nginx/sites-enabled/
