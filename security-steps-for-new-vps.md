@@ -11,6 +11,11 @@ PasswordAuthentication no
 PermitRootLogin no
 Port ***
 ```
+- Edit `50-cloud-init.conf`:
+```
+sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
+```
+
 - Allow the new port and keep SSH access:
 ```bash
 sudo ufw allow ***/tcp
