@@ -8,6 +8,7 @@ sudo apt install postgresql postgresql-contrib -y
 ```
 
 Check if it’s running:
+
 ```bash
 sudo systemctl status postgresql
 ```
@@ -41,7 +42,7 @@ sudo nano /etc/postgresql/14/main/postgresql.conf
 
 Find listen_addresses and change:
 ```bash
-listen_addresses = '127.0.0.1,203.0.113.25'
+listen_addresses = '*'
 ```
 
 **2. Edit pg_hba.conf to allow your IP or all:**
