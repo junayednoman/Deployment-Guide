@@ -51,7 +51,7 @@ sudo nano /etc/postgresql/14/main/pg_hba.conf
 ```
 Add:
 ```bash
-host    all     all     203.0.113.25/32     md5
+host    all     all     0.0.0.0/0     md5
 ```
 
 **3. Restart PostgreSQL:**
