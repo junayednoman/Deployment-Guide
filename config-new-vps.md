@@ -14,7 +14,8 @@ sudo apt install git curl build-essential -y
 - Use NodeSource for latest stable:
 
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo rm -f /etc/apt/sources.list.d/nodesource.list
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
