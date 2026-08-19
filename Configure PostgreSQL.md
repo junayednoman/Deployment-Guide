@@ -27,6 +27,11 @@ psql
 CREATE DATABASE mydb;
 CREATE USER myuser WITH ENCRYPTED PASSWORD 'mypassword';
 GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
+GRANT ALL ON SCHEMA public TO myuser;
+
+-- Make your user the explicit owner of the schema
+ALTER SCHEMA public OWNER TO myuser;
+
 
 # Exit
 \q
